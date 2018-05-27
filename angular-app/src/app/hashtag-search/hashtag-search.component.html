@@ -1,0 +1,21 @@
+<ul class="hashtag-search">
+  <div>
+	  <label>
+      <div>
+        Hashtag search
+        <a routerLink="/user_search">User search</a>
+      </div>
+		  <input [(ngModel)]="searchWord" placeholder="Search by Hashtag">
+      <button (click)="onClickSearch()">Search</button>
+	  </label>
+  </div>
+
+  <div *ngIf="searchTweets">
+    <app-tweet-detail [tweets]="searchTweets.slice(0,10)"></app-tweet-detail>
+    <div class="pagination">
+      <a *ngIf="pager.previousPage" (click)="goPreviousPage()"><</a>
+      <a *ngIf="pager.currentPage"> {{pager.currentPage}}</a>
+      <a *ngIf="pager.nextPage" (click)="goNextPage()">></a>
+    </div>
+  </div>
+</ul>

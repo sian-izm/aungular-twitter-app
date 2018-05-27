@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Tweet</th>
+      <th>Likes</th>
+      <!-- <th>Replies</th> --><!-- Unabable to get by ordinal way-->
+      <th>Retweets</th>
+      <th>Hashtags</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tweet of tweets">
+      <th>{{tweet.text}}</th><!-- If the tweet contain exceed 50 characters, show ​... ​for the remaining. -->
+      <th>{{tweet.likes}}</th><!-- If no likes show ​-​ character. -->
+      <th>{{tweet.retweets}}</th><!-- If no retweets show ​-​ character -->
+      <th>{{tweet.hashtags}}</th><!--  If number of hashtags > 2, then just display 2. -->
+      <th>{{tweet.date}}</th><!-- Date format must be “Month Day, Year”. Month should be in word not number. E.g.: Jan 5, 2018 not 1 5, 2018 -->
+    </tr>
+</table>
